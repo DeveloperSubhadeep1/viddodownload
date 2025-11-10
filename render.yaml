@@ -1,0 +1,21 @@
+# render.yaml
+services:
+  # A background worker. This is perfect for a Telegram bot.
+  - type: worker
+    name: telegram-downloader-bot
+    # The runtime environment for your service
+    env: python
+    # The command to install dependencies
+    buildCommand: "pip install -r requirements.txt"
+    # The command to start your bot
+    startCommand: "python bot.py"
+    # Specify the Python version
+    plan: free # Optional: use the free tier
+    python:
+      version: 3.11
+    # Environment variables will be set in the Render dashboard
+    envVars:
+      - key: BOT_TOKEN
+        sync: false # Keep this secret out of the YAML file
+      - key: CHANNEL_ID
+        sync: false # Keep this secret out of the YAML file
