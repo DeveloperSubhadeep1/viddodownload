@@ -13,8 +13,8 @@ from telegram.constants import ParseMode
 from telegram.request import HTTPXRequest
 
 # --- Configuration from Environment Variables ---
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-CHANNEL_ID = os.getenv("CHANNEL_ID")
+BOT_TOKEN = os.getenv("BOT_TOKEN",'7203772931:AAFw3mgaT9Sx_F6ByiljqComBAG25mSh0AA')
+CHANNEL_ID = os.getenv("CHANNEL_ID",'-1002608131568')
 
 # --- Define a local download folder ---
 # Render provides an ephemeral filesystem. This folder will be temporary.
@@ -142,3 +142,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
